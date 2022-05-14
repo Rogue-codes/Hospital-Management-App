@@ -13,6 +13,15 @@ const Container = styled.div`
     color: ${props => props.cl} !important;
     transition: all .5s linear;
 `
+const Loader = styled.div`
+    width: 100%;
+    height: 100vh;
+    img{
+      height: 100%;
+      width: 100%;
+      object-fit: contain;
+    }
+`
 
 function App() {
   const [bg, setBg] = useState(false)
@@ -20,6 +29,15 @@ function App() {
   const switchBg = () =>{
     setBg(!bg)
   }
+
+  const [loading, setLoading] = useState(false)
+
+  useEffect(() => {
+    setLoading(true)
+    setTimeout(() => {
+      setLoading(false)
+    },5000)
+  },[])
 
   useEffect(()=>{
     const getbg = JSON.parse(localStorage.getItem('background'))
@@ -35,12 +53,18 @@ function App() {
 
   return (
     <Container bgc={bg ? '#333' : '#fff'} cl={bg ? '#fff' : '#000'} className="App">
-      <Router>
-        <Routes>
-          <Route path='/' element={<Landing/>}/>
-          <Route path='/home' element={<Home bg={bg} switchBg={switchBg}/>}/>
-        </Routes>
-      </Router>
+      {
+          loading ? (<Loader>
+            <img src="/spinner.gif" alt=''></img>
+          </Loader>):(
+          <Router>
+            <Routes>
+              <Route path='/' element={<Landing/>}/>
+              <Route path='/home' element={<Home bg={bg} switchBg={switchBg}/>}/>
+            </Routes>
+          </Router>
+          )
+      }
       <Toaster/>      
     </Container>
   );
