@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react';
 import styled from 'styled-components'
 import { Toaster } from 'react-hot-toast';
+import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 
 
 import Home from './components/Home';
+import Landing from './components/Landing';
 const Container = styled.div`
     width: 100%;
     min-height: 100vh;
@@ -33,8 +35,13 @@ function App() {
 
   return (
     <Container bgc={bg ? '#333' : '#fff'} cl={bg ? '#fff' : '#000'} className="App">
-      <Toaster/>
-      <Home bg={bg} switchBg={switchBg}/>
+      <Router>
+        <Routes>
+          <Route path='/' element={<Landing/>}/>
+          <Route path='/home' element={<Home bg={bg} switchBg={switchBg}/>}/>
+        </Routes>
+      </Router>
+      <Toaster/>      
     </Container>
   );
 }
