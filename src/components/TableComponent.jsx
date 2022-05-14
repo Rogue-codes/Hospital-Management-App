@@ -79,7 +79,7 @@ function TableComponent({bg,searchVal}) {
                 }).map((P)=>
                     <Tr bg={bg} key={P.id} P={P}/>
                   )
-                ):('No patient')
+                ):('No patient *Click the admit patient* button to add a new patient')
               }
             </tbody>
         </Table>
