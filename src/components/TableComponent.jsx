@@ -14,6 +14,7 @@ const Table = styled.table`
             height: 8vh;
             font-family: 'PT Serif', serif;
             background:#00bd9c;
+            color: #fff;
         }
         td{
             height: 10vh;
