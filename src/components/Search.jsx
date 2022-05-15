@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 const Ser = styled.input`
     width: 40%;
-    height: 6vh;
+    height: 8vh;
     background: transparent;
     margin-bottom: 5%;
     margin-left: 2%;

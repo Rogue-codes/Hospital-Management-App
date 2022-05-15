@@ -110,6 +110,24 @@ export const PatientSlice = createSlice({
             state.signedInPatient = state.totalPatient - state.signedOutPatient
 
             localStorage.setItem('signedInPatient', JSON.stringify(state.signedInPatient))
+
+            state.ICU = state.patientList.filter((item) => {
+                if(item.condition === 'ICU'){
+                    return item
+                }else{
+                    return null
+                }
+            }).length
+            localStorage.setItem('icu', JSON.stringify(state.ICU))
+
+            state.Stable = state.patientList.filter((item) => {
+                if(item.condition === 'stable'){
+                    return item
+                }else{
+                    return null
+                }
+            }).length
+            localStorage.setItem('stable', JSON.stringify(state.Stable))
         },
         addFilterPatient : (state,action) =>{
             state.filterStatus = action.payload

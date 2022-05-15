@@ -27,7 +27,16 @@ const Table = styled.table`
             &:nth-child(even) {
                 background-color: ${props => props.bgc} ;
             }
-          }
+        }
+        .null{
+            width: 100%;
+            text-align: center;
+            position: absolute;
+            font-family: 'PT Serif', serif;
+            top: 250%;
+            font-size: 2vw;
+            color: #00bd9c;
+        }
 `
 function TableComponent({bg,searchVal}) {
   const patient = useSelector((state)=> state.Patient.patientList)
@@ -79,7 +88,7 @@ function TableComponent({bg,searchVal}) {
                 }).map((P)=>
                     <Tr bg={bg} key={P.id} P={P}/>
                   )
-                ):('No patient *Click the admit patient* button to add a new patient')
+                ):(<p className='null'>Patient log is currently empty <b>Click the admit patient</b> button to admit a new patient</p>)
               }
             </tbody>
         </Table>

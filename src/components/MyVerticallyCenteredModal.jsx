@@ -9,7 +9,7 @@ import toast from 'react-hot-toast'
 
 const Pop = styled.form`
     width: 100%;
-    height: 65vh;
+    height: 75vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -18,22 +18,23 @@ const Pop = styled.form`
     gap: 2%;
     input{
         width: 80%;
-        height: 8vh;
+        height: 10vh;
         margin-top: .4%;
         padding-left: 2%;
         border-radius: 5px;
-        border: 1px solid black;
+        border: 1px solid lightgrey;
         &:focus{
             outline: none;
         }
     }
     .sel{
         width: 80%;
-        height: 8vh;
+        height: 10vh;
         background: white;
+        color: grey;
         padding-left: 2%;
         border-radius: 5px;
-        border: 1px solid black;
+        border: 1px solid lightgrey;
         &:focus{
             outline: none;
         }
@@ -75,7 +76,7 @@ function MyVerticallyCenteredModal(props) {
                 timeOut: status !== 'admitted' ? new Date().toLocaleString() : ''
             }))
         }else{
-            toast.error(`All visitor's information must be filled correctly`)
+            toast.error(`All Patient information must be filled in correctly`)
             return
         }
 
