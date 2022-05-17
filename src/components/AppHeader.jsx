@@ -40,8 +40,10 @@ const Toggle = styled.div`
     border: 1px solid #000;
     background-color: #fff;
     right: 10px;
-    position: relative;
-    z-index: 999;
+    position: absolute;
+    left: 94%;
+    top: 30%;
+    z-index: 9;
     display: flex;
     align-items: center;
     justify-content: space-around;

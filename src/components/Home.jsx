@@ -83,6 +83,15 @@ const Mobile = styled.div`
       color: #fff;
     }
 `
+const Top = styled.div`
+    width: 100%;
+    background: linear-gradient(90deg, #000000d9 42%, rgba(2,1,18,0.6871790952709209) 77%, rgba(1,12,14,0.5051062661392682) 100%),url('https://images.pexels.com/photos/247786/pexels-photo-247786.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+    background-size: cover;
+    -webkit-background-size:cover;
+    -moz-background-size:cover;
+    -o-background-size:cover;
+    background-position: 10% 50%;
+`
 function Home({bg,switchBg}) {
 
   const showAnalyticTotalGuest = useSelector((state) => state.Patient.totalPatient)
@@ -137,9 +146,11 @@ const menuTransitions = useTransition(showMenu, {
   return (
     <>
     <Hom>
+      <Top>
         <AppHeader bg={bg}  switchBg={switchBg}/>
         <Search bg={bg} searchVal={searchVal} setSearchVal={setSearchVal}/>
         <Analytics  showMenu={showMenu} setShowMenu={setShowMenu}/>
+      </Top>
         <TableComponent bg={bg} searchVal={searchVal}/>
         {
         maskTransitions(

@@ -8,17 +8,19 @@ const Ser = styled.input`
     margin-bottom: 5%;
     margin-left: 2%;
     border-radius:5px;
-    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
     padding-left: 1%;
-    border: none;
-    color:${props => props.bdc};
+    border: 2px solid white;
+    color:white;
     &:focus{
         outline:none;
     }
+    &::placeholder{
+        color:white;
+    }
 `
-function Search({bg,searchVal, setSearchVal}) {
+function Search({searchVal, setSearchVal}) {
   return (
-    <Ser bdc={ bg ? 'white' : 'black'} value={searchVal} onChange={(e)=>{setSearchVal(e.target.value)}} placeholder="search by name..."/>
+    <Ser value={searchVal} onChange={(e)=>{setSearchVal(e.target.value)}} placeholder="search by name..."/>
   )
 }
 
