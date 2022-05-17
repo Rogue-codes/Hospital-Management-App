@@ -32,6 +32,10 @@ const Btn = styled.button`
     color: white;
     border: none;
     border-radius: 5px;
+    transition: all .5s linear;
+    &:hover{
+      transform: scale(1.1);
+    }
 `
 const Toggle = styled.div`
     width: 50px;
