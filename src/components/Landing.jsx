@@ -37,17 +37,26 @@ const Content = styled.div`
     background: rgba(0, 0, 0, 0.5);
     color: #f1f1f1;
     width: 100%;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     padding: 20px;
     #myBtn {
         width: 200px;
         font-size: 18px;
-        padding: 10px;
+        padding: 16px;
         border: none;
         background: #00bd9c;
+        border-radius: 5px;
         color: #fff;
         text-decoration: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         cursor: pointer;
-        transition: all .5s linear;
+        transition: all .3s linear;
         &:hover {
             background: #3ffadb;
         }
