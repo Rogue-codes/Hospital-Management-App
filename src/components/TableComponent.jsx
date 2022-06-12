@@ -14,6 +14,9 @@ const Table = styled.table`
     border-collapse: collapse;
     position: relative;
         th{
+          @media (max-width:480px) {
+            font-size: .7rem;
+          }
             height: 8vh;
             font-family: 'PT Serif', serif;
             background:#00bd9c;
