@@ -3,6 +3,11 @@ import styled from 'styled-components'
 import {IoAnalyticsSharp} from 'react-icons/io5'
 
 const Btn = styled.button`
+    @media (max-width:480px) {
+      width: 30%;
+      font-size: 1rem;
+      right: 4%;
+    }
     height: 8vh;
     width: 10%;
     position: absolute;

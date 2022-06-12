@@ -13,6 +13,10 @@ const Header = styled.div`
     padding: 2%;
     margin-bottom: 5%;
     select{
+      @media (max-width:480px) {
+        width: 30%;
+        border: 2px solid #00bd9c;
+      }
       width: 10%;
       height: 6vh;
       padding-left: 2%;
@@ -25,6 +29,11 @@ const Header = styled.div`
     }
 `
 const Btn = styled.button`
+    @media (max-width:480px) {
+      width: 30%;
+      font-size: 1rem;
+      height: 6vh;
+    }
     width: 10%;
     font-size: 1.3vw;
     height: 8vh;
@@ -38,6 +47,9 @@ const Btn = styled.button`
     }
 `
 const Toggle = styled.div`
+    @media (max-width:480px) {
+      left: 85%;
+    }
     width: 50px;
     height: 25px;
     border-radius: 20px;

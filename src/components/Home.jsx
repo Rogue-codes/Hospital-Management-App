@@ -14,9 +14,6 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 const Hom = styled.div`
     width: 100%;
     min-height: 100vh;
-    @media (max-width:480px) {
-      display: none;
-    }
     .firstAnimate{
     @media (max-width:480px) {
       display: block;
@@ -32,8 +29,9 @@ const Hom = styled.div`
   .animate{
     @media (max-width:480px) {
       display: block;
+      width: 75%;
     }
-    width: 75%;
+    width: 100%;
     padding: 2%;
     box-shadow: 2px 2px 4px #010214a6;
     height: 100vh;
@@ -49,6 +47,12 @@ const Hom = styled.div`
   }
 `
 const Card = styled.div`
+    @media (max-width:480px) {
+      font-size: 1rem;
+      width: 60%;
+      margin-left:5%;
+      margin-bottom: 10%;
+    }
     width: 30%;
     height: 10vh;
     border-radius: 5px;
@@ -61,27 +65,13 @@ const Card = styled.div`
     align-items: center;
 `
 const Card3 = styled.div`
+    @media (max-width:480px) {
+      font-size: 1rem;
+      width: 60%;
+    }
     margin-top: 4%;
     width: 20%;
     margin-left: 5%;
-`
-const Mobile = styled.div`
-    @media (max-width:480px) {
-      display: flex;
-    }
-    width: 100%;
-    height: 100vh;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    padding: 2%;
-    background:#00bd9c;
-    h1{
-      text-align:center;
-      font-size: 2rem;
-      font-weight: 800;
-      color: #fff;
-    }
 `
 const Top = styled.div`
     width: 100%;
@@ -134,9 +124,9 @@ function Home({bg,switchBg}) {
 })
 
 const menuTransitions = useTransition(showMenu, {
-  from: { opacity: 0, transform: "translateX(110%)"},
-  enter: { opacity: 1, transform: "translateX(100%)" },
-  leave: { opacity: 0, transform: "translateX(110%)" },
+  from: { opacity: 0, transform: "translateX(100%)"},
+  enter: { opacity: 1, transform: "translateX(65%)" },
+  leave: { opacity: 0, transform: "translateX(100%)" },
   reverse: showMenu,
   delay: 200,
     // config: config.molasses,
@@ -151,7 +141,7 @@ const menuTransitions = useTransition(showMenu, {
         <Search bg={bg} searchVal={searchVal} setSearchVal={setSearchVal}/>
         <Analytics  showMenu={showMenu} setShowMenu={setShowMenu}/>
       </Top>
-        <TableComponent bg={bg} searchVal={searchVal}/>
+      <TableComponent bg={bg} searchVal={searchVal}/>
         {
         maskTransitions(
         (styles, item) => item && <animated.div style={styles} className='firstAnimate' onClick={()=> setShowMenu(false)}>
@@ -173,9 +163,6 @@ const menuTransitions = useTransition(showMenu, {
         )
       }
     </Hom>
-    <Mobile>
-      <h1>Sorry this webApp is not Available for Mobile Phones use a pc to have a better experience</h1>
-    </Mobile>
     </>
   )
 }

@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import { addDelete, addDischarge } from './features/patientSlice'
 import {AiFillDelete} from 'react-icons/ai'
 import toast from 'react-hot-toast'
+import MyVerticallyCenteredModalForIndividualPatient from './MyVerticallyCenteredModalForIndividualPatient'
 
 const Trow = styled.tr`
     &:nth-child(even) {
@@ -25,12 +26,18 @@ const Trow = styled.tr`
             transform: scale(1.01)
         }
     }
+    td{
+        @media (max-width:480px) {
+            font-size: .8rem;
+        }
+    }
 `
 const Btn = styled.button`
     background: #00bd9c;
 `
 function Tr({bg,P}) {
     const [discharge, setDischarge] = useState(true)
+    const [modalShow, setModalShow] = React.useState(false);
     const dispatch = useDispatch()
 
     // initialize discharge functionality
@@ -59,17 +66,19 @@ function Tr({bg,P}) {
     }
   return (
     <Trow bgc={bg ? 'black' : 'lightgrey'}>
-        <td  className={P.status === 'discharged'? 'underline' : null}>{P.name}</td>
-        <td className={P.status === 'discharged'? 'underline' : null}>{P.number}</td>
-        <td>{P.age}</td>
-        <td>{P.gender}</td>
-        <td className={P.status === 'discharged'? 'underline' : null}>{P.hmo}</td>
+        <td  className={P.status === 'discharged'? 'underline' : null} onClick={() => setModalShow(true)}>{P.name}</td>
         <td><b>{P.timeIn}</b></td>
         <td>{P.status}</td>
         <td><b>{P.timeOut}</b></td>
         <td>{P.condition}</td>
         <td><Btn onClick={handleDischarge}>Discharge</Btn></td>
         <td><AiFillDelete onClick={handleDelete} size='1.5rem' color='red' cursor='pointer'/></td>
+        <MyVerticallyCenteredModalForIndividualPatient
+        bg={bg}
+        show={modalShow}
+        P={P}
+        onHide={() => setModalShow(false)}
+      />
     </Trow>
   )
 }

@@ -5,6 +5,9 @@ import { useSelector } from 'react-redux'
 import Tr from './Tr'
 
 const Tab = styled.div`
+    @media (max-width:480px) {
+      overflow: scroll
+    }
 `
 const Table = styled.table`
     width: 100%;
@@ -64,10 +67,6 @@ function TableComponent({bg,searchVal}) {
             <thead>
                 <tr>
                 <th>Name</th>
-                <th>Number</th>
-                <th>Age</th>
-                <th>Gender</th>
-                <th>HMO</th>
                 <th>Time In</th>
                 <th>Status</th>
                 <th>Time Out</th>
