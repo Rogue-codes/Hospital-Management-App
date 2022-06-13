@@ -66,7 +66,7 @@ function Tr({bg,P}) {
     }
   return (
     <Trow bgc={bg ? 'black' : 'lightgrey'}>
-        <td  className={P.status === 'discharged'? 'underline' : null} onClick={() => setModalShow(true)}>{P.name}</td>
+        <td  className={P.status === 'discharged'? 'underline' : null} onClick={() => setModalShow(true)} style={{cursor:'pointer'}}>{P.name}</td>
         <td><b>{P.timeIn}</b></td>
         <td>{P.status}</td>
         <td><b>{P.timeOut}</b></td>
