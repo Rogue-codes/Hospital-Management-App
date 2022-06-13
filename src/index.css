@@ -8,3 +8,20 @@
 .pd{
   font-size: 1.5vw;
 }
+.download-table-xls-button{
+  background: #00bd9c;
+  margin: 1%;
+  padding: .5% 3%;
+  border: none;
+  border-radius: 5px;
+  font-weight: 900;
+  color: #fff;
+}
+.download-table-xls-button:hover{
+  background:#00bd9dde;
+}
+@media (max-width:480px) {
+  .download-table-xls-button{
+    margin: 3%;
+  }
+}

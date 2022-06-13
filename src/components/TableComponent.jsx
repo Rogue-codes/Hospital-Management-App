@@ -1,8 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
-// import Table from 'react-bootstrap/Table'
 import { useSelector } from 'react-redux'
 import Tr from './Tr'
+import ReactHTMLTableToExcel from 'react-html-table-to-excel';
+
 
 const Tab = styled.div`
     @media (max-width:480px) {
@@ -66,7 +67,14 @@ function TableComponent({bg,searchVal}) {
 
   return (
     <Tab>
-        <Table>
+      <ReactHTMLTableToExcel
+      id="test-table-xls-button"
+      className="download-table-xls-button"
+      table="table-to-xls"
+      filename="tablexls"
+      sheet="tablexls"
+      buttonText="Download as XLS"/>
+        <Table id="table-to-xls">
             <thead>
                 <tr>
                 <th>Name</th>
